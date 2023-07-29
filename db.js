@@ -13,7 +13,8 @@ async function getDatabase(){
 
     return database;
 }
-//mongodb://127.0.0.1:27017
+//localIp:mongodb://127.0.0.1:27017
+//cloudIp:mongodb+srv://admin:vtdMwItMS0IS9ka6@cluster0.xlkjs3v.mongodb.net/
 module.exports={
     getDatabase
 }
