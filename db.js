@@ -1,20 +1,21 @@
-const mongodb=require('mongodb');
-const MongoClient=mongodb.MongoClient;
+const mongodb = require('mongodb');
+const MongoClient = mongodb.MongoClient;
+const ObjectID = mongodb.ObjectId;
 
 let database;
 
 async function getDatabase(){
-    const client = await MongoClient.connect('mongodb+srv://admin:vtdMwItMS0IS9ka6@cluster0.xlkjs3v.mongodb.net/');
-    database=client.db('library');
+    const client = await MongoClient.connect('mongodb://127.0.0.1:27017');
+    database = client.db('library');
 
-    if(!database){
-        console.log("Database is not Connected");
+    if (!database) {
+            console.log('Database not connected');
     }
 
     return database;
 }
-//localIp:mongodb://127.0.0.1:27017
-//cloudIp:mongodb+srv://admin:vtdMwItMS0IS9ka6@cluster0.xlkjs3v.mongodb.net/
-module.exports={
-    getDatabase
+
+module.exports = {
+    getDatabase,
+    ObjectID
 }
